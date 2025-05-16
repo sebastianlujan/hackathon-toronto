@@ -1,21 +1,20 @@
-# Soroban Project
+# Blind Auction, using Homomorphic Encryption
 
-## Project Structure
+A blind auction is a type of auction where the bidders do not know the identity of the other bidders or the amount they are bidding
 
-This repository uses the recommended structure for a Soroban project:
+Implementation Architecture:
+
+Bid Storage: 
+- Contract stores encrypted bids without ability to decrypt
+- Bidders do not know the identity of the other bidders or the amount they are bidding
+
+Winner Determination: 
+- Once auction ends, computations on encrypted data reveal winner
+
+Bid Revelation: 
+- Winner provides proof or decryption key to claim their win
+
+-## Project Structure
+
 ```text
-.
-├── contracts
-│   └── hello_world
-│       ├── src
-│       │   ├── lib.rs
-│       │   └── test.rs
-│       └── Cargo.toml
-├── Cargo.toml
-└── README.md
-```
 
-- New Soroban contracts can be put in `contracts`, each in their own directory. There is already a `hello_world` contract in there to get you started.
-- If you initialized this project with any other example contracts via `--with-example`, those contracts will be in the `contracts` directory as well.
-- Contracts should have their own `Cargo.toml` files that rely on the top-level `Cargo.toml` workspace for their dependencies.
-- Frontend libraries can be added to the top-level directory as well. If you initialized this project with a frontend template via `--frontend-template` you will have those files already included.
