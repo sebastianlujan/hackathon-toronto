@@ -1,20 +1,30 @@
-# Blind Auction, using Homomorphic Encryption
+# Dutch Auction on Stellar Soroban with Privacy
 
-A blind auction is a type of auction where the bidders do not know the identity of the other bidders or the amount they are bidding
+## 🔒 Privacy-Preserving Dutch Auction with Homomorphic Encryption
 
-Implementation Architecture:
+This project implements a fully decentralized and privacy-preserving Dutch auction system on Stellar's Soroban smart contract platform, featuring fully homomorphic encryption for confidential bidding.
 
-Bid Storage: 
-- Contract stores encrypted bids without ability to decrypt
-- Bidders do not know the identity of the other bidders or the amount they are bidding
+## 🚀 Technologies Used
 
-Winner Determination: 
-- Once auction ends, computations on encrypted data reveal winner
+### Stellar Soroban Platform
+- **Smart Contract Framework**: Built using Soroban's `#[contractimpl]` attribute for robust auction logic.
+- **On-chain Storage**: Leverages `env.storage().instance().set/get` for persistent encrypted state management.
+- **Blockchain Time**: Uses Soroban's environment for precise auction timing and state transitions.
 
-Bid Revelation: 
-- Winner provides proof or decryption key to claim their win
+### Privacy Layer: Zama's tFHE
+- **Fully Homomorphic Encryption**: Enables computations on encrypted data without decryption.
+- **Private Auction Parameters**:
+  - Encrypted starting price.
+  - Encrypted minimum price.
+  - Encrypted price decrement.
 
--## Project Structure
+## ✨ Key Features
 
-```text
+- **Privacy-Preserving Bidding**: All price calculations happen on encrypted values.
+- **Automatic Price Degradation**: Time-based homomorphic calculations adjust price over time.
+- **Secure Settlement**: Winner determination without revealing other bids.
+- **Transparent Execution**: Leverages Stellar's reliable consensus while maintaining data privacy.
 
+## 📋 Installation & Setup
+
+Follow these steps to set up the project:
