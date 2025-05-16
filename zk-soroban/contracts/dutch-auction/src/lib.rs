@@ -70,7 +70,6 @@ impl DutchAuction {
         duration: u64,
         price_decrement: u64,  // Price decrement in smallest units
     ) {
-        
         let NOW: u64 = __contract_fn_get_now(env);
         __contract_fn_set_privacy(env);
         __contract_fn_set_storage(env, admin, token_id, item_id);
@@ -92,7 +91,6 @@ pub fn get_current_price(env: Env) -> Result<FheInt, Error> {
     let now = env.ledger().timestamp();
     let elapsed = now - start_time;
 
-    
     Ok(encrypted_current_price)
 }
 
@@ -107,7 +105,6 @@ fn __contract_fn_set_storage(env: Env, admin: Address, token_id: BytesN<32>, ite
     env.storage().instance().set(&DataKey::TokenId, &token_id);
     env.storage().instance().set(&DataKey::ItemId, &item_id);
 }
-
 
 fn __contract_fn_set_auction_config(env: Env, start_price: u64, minimum_price: u64, duration: u64, price_decrement: u64) {
     
